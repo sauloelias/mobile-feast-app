@@ -15,7 +15,7 @@ const Home = () => {
 
         <div className="space-y-6">
           {categories.map((category) => (
-            <Link key={category.name} to={category.path}>
+            <Link key={category.name} to={category.path} className="block">
               <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="relative h-32">
                   <img
