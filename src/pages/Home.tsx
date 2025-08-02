@@ -31,12 +31,9 @@ const Home = () => {
                       <h3 className="text-lg font-semibold text-foreground">
                         {category.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {category.description}
-                      </p>
                     </div>
                     <Button variant="secondary" size="sm">
-                      View Recipes
+                      Ver Receitas
                     </Button>
                   </div>
                 </CardContent>

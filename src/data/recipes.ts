@@ -534,31 +534,31 @@ export const getRecipeById = (id: string) => {
 
 export const categories = [
   {
-    name: 'Breakfast',
+    name: 'Café-da-Manhã',
     path: '/breakfast',
     image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&h=300&fit=crop',
     description: 'Start your day right'
   },
   {
-    name: 'Lunch',
+    name: 'Almoço',
     path: '/lunch', 
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
     description: 'Nutritious midday meals'
   },
   {
-    name: 'Snack',
+    name: 'Lanche',
     path: '/snack',
     image: 'https://images.unsplash.com/photo-1587080422634-48baaa49b33a?w=400&h=300&fit=crop',
     description: 'Healthy bites anytime'
   },
   {
-    name: 'Dinner',
+    name: 'Janta',
     path: '/dinner',
     image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=400&h=300&fit=crop',
     description: 'Satisfying evening meals'
   },
   {
-    name: 'Dessert',
+    name: 'Sobremesa',
     path: '/dessert',
     image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop',
     description: 'Sweet treats to indulge'
