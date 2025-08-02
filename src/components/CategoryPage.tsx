@@ -57,9 +57,6 @@ const CategoryPage = ({ category, title }: CategoryPageProps) => {
                             <span>{recipe.servings} servings</span>
                           </div>
                         </div>
-                        <Badge variant="secondary" className="text-xs">
-                          {recipe.category}
-                        </Badge>
                       </div>
                     </CardContent>
                   </div>
