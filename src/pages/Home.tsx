@@ -13,7 +13,7 @@ const Home = () => {
           </h1>
         </header>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {categories.map((category) => (
             <Link key={category.name} to={category.path}>
               <Card className="overflow-hidden hover:shadow-lg transition-shadow">
