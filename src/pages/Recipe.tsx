@@ -6,6 +6,17 @@ import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, Clock, Users, ChefHat, Info, Utensils, Lightbulb } from 'lucide-react';
 import { getRecipeById } from '@/data/recipes';
 
+const getCategoryTranslation = (category: string) => {
+  const translations: Record<string, string> = {
+    'breakfast': 'Café-da-Manhã',
+    'lunch': 'Almoço',
+    'snack': 'Lanche',
+    'dinner': 'Janta',
+    'dessert': 'Sobremesa'
+  };
+  return translations[category] || category;
+};
+
 const Recipe = () => {
   const { id } = useParams<{ id: string }>();
   const recipe = getRecipeById(id || '');
@@ -55,7 +66,7 @@ const Recipe = () => {
           {/* Recipe Header */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <Badge variant="secondary">{recipe.category}</Badge>
+              <Badge variant="secondary">{getCategoryTranslation(recipe.category)}</Badge>
             </div>
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
@@ -64,7 +75,7 @@ const Recipe = () => {
               </div>
               <div className="flex items-center gap-1">
                 <Users className="h-4 w-4" />
-                <span>{recipe.servings} servings</span>
+                <span>{recipe.servings} porções</span>
               </div>
               <div className="flex items-center gap-1">
                 <Info className="h-4 w-4" />
@@ -78,7 +89,7 @@ const Recipe = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
                 <ChefHat className="h-5 w-5" />
-                Ingredients
+                Ingredientes
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -98,7 +109,7 @@ const Recipe = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
                 <Utensils className="h-5 w-5" />
-                Instructions
+                Como Preparar
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -120,7 +131,7 @@ const Recipe = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
                 <Lightbulb className="h-5 w-5" />
-                Time-Saving Tips
+                Dicas
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -138,26 +149,26 @@ const Recipe = () => {
           {/* Nutrition */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Nutritional Information</CardTitle>
-              <p className="text-sm text-muted-foreground">Per serving</p>
+              <CardTitle className="text-lg">Informação Nutricional</CardTitle>
+              <p className="text-sm text-muted-foreground">Por Porção</p>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="text-center p-3 bg-muted rounded-lg">
                   <div className="font-semibold text-lg">{recipe.nutrition.calories}</div>
-                  <div className="text-muted-foreground">Calories</div>
+                  <div className="text-muted-foreground">Calorias</div>
                 </div>
                 <div className="text-center p-3 bg-muted rounded-lg">
                   <div className="font-semibold text-lg">{recipe.nutrition.protein}</div>
-                  <div className="text-muted-foreground">Protein</div>
+                  <div className="text-muted-foreground">Proteína</div>
                 </div>
                 <div className="text-center p-3 bg-muted rounded-lg">
                   <div className="font-semibold text-lg">{recipe.nutrition.carbs}</div>
-                  <div className="text-muted-foreground">Carbs</div>
+                  <div className="text-muted-foreground">Carboidrato</div>
                 </div>
                 <div className="text-center p-3 bg-muted rounded-lg">
                   <div className="font-semibold text-lg">{recipe.nutrition.fat}</div>
-                  <div className="text-muted-foreground">Fat</div>
+                  <div className="text-muted-foreground">Gordura</div>
                 </div>
               </div>
             </CardContent>
@@ -166,7 +177,7 @@ const Recipe = () => {
           {/* Meal Prep */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Meal Prep & Storage</CardTitle>
+              <CardTitle className="text-lg">Dicas de Armazenamento</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
@@ -183,7 +194,7 @@ const Recipe = () => {
           {/* Variations */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Recipe Variations</CardTitle>
+              <CardTitle className="text-lg">Variações da Receita</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
