@@ -9,11 +9,8 @@ const Home = () => {
       <div className="max-w-md mx-auto">
         <header className="text-center mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            My Cookbook
+            Receitas Rápidas para Diabéticos Saudáveis
           </h1>
-          <p className="text-muted-foreground">
-            Discover delicious recipes for every meal
-          </p>
         </header>
 
         <div className="space-y-4">
